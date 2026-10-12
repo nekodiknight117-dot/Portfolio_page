@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-label="Garage Ledger placeholder screenshot">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="540" fill="#0b0d10"/>
+  <rect width="1200" height="540" fill="url(#grid)"/>
+  <!-- window chrome -->
+  <rect x="40" y="40" width="1120" height="460" rx="14" fill="#15181d" stroke="#2b323b"/>
+  <rect x="40" y="40" width="1120" height="48" rx="14" fill="#1f242b"/>
+  <rect x="40" y="74" width="1120" height="14" fill="#1f242b"/>
+  <circle cx="70" cy="64" r="6" fill="#e10600"/>
+  <circle cx="92" cy="64" r="6" fill="#f5a623"/>
+  <circle cx="114" cy="64" r="6" fill="#3a434e"/>
+  <rect x="440" y="54" width="320" height="20" rx="10" fill="#0b0d10"/>
+  <!-- content -->
+  <text x="80" y="124" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#e8ecf1" letter-spacing="2">GARAGE LEDGER</text>
+  <text x="1120" y="124" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#6b7684" letter-spacing="3">PLACEHOLDER SCREENSHOT</text>
+  
+        <rect x="80" y="150" width="1040" height="40" rx="6" fill="#1f242b"/>
+        <rect x="100" y="162" width="180" height="16" rx="3" fill="#3a434e"/>
+        <rect x="620" y="162" width="120" height="16" rx="3" fill="#3a434e"/>
+        <rect x="960" y="160" width="120" height="20" rx="10" fill="#f5a623" opacity="0.8"/>
+        <rect x="80" y="204" width="1040" height="40" rx="6" fill="#15181d"/>
+        <rect x="100" y="216" width="277" height="16" rx="3" fill="#3a434e"/>
+        <rect x="620" y="216" width="120" height="16" rx="3" fill="#3a434e"/>
+        <rect x="960" y="214" width="120" height="20" rx="10" fill="#f5a623" opacity="0.8"/>
+        <rect x="80" y="258" width="1040" height="40" rx="6" fill="#1f242b"/>
+        <rect x="100" y="270" width="374" height="16" rx="3" fill="#3a434e"/>
+        <rect x="620" y="270" width="120" height="16" rx="3" fill="#3a434e"/>
+        <rect x="960" y="268" width="120" height="20" rx="10" fill="#f5a623" opacity="0.8"/>
+        <rect x="80" y="312" width="1040" height="40" rx="6" fill="#15181d"/>
+        <rect x="100" y="324" width="271" height="16" rx="3" fill="#3a434e"/>
+        <rect x="620" y="324" width="120" height="16" rx="3" fill="#3a434e"/>
+        <rect x="960" y="322" width="120" height="20" rx="10" fill="#f5a623" opacity="0.8"/>
+        <rect x="80" y="366" width="1040" height="40" rx="6" fill="#1f242b"/>
+        <rect x="100" y="378" width="368" height="16" rx="3" fill="#3a434e"/>
+        <rect x="620" y="378" width="120" height="16" rx="3" fill="#3a434e"/>
+        <rect x="960" y="376" width="120" height="20" rx="10" fill="#f5a623" opacity="0.8"/>
+        <rect x="80" y="420" width="1040" height="40" rx="6" fill="#15181d"/>
+        <rect x="100" y="432" width="265" height="16" rx="3" fill="#3a434e"/>
+        <rect x="620" y="432" width="120" height="16" rx="3" fill="#3a434e"/>
+        <rect x="960" y="430" width="120" height="20" rx="10" fill="#f5a623" opacity="0.8"/>
+  <!-- racing stripe -->
+  <rect x="40" y="494" width="1120" height="4" fill="#f5a623"/>
+</svg>

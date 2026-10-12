@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+@import '@fontsource/rajdhani/500.css';
+@import '@fontsource/rajdhani/600.css';
+@import '@fontsource/rajdhani/700.css';
+@import '@fontsource-variable/inter';
+
+/* ------------------------------------------------------------------
+   Theme tokens: "professional motorsport dashboard"
+   ------------------------------------------------------------------ */
+@theme {
+  --font-display: 'Rajdhani', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Asphalt / carbon neutrals */
+  --color-asphalt-950: #07080a;
+  --color-asphalt-900: #0b0d10;
+  --color-asphalt-800: #15181d;
+  --color-asphalt-700: #1f242b;
+  --color-asphalt-600: #2b323b;
+  --color-asphalt-500: #3a434e;
+  --color-asphalt-400: #6b7684;
+  --color-asphalt-300: #9aa4b1;
+  --color-asphalt-200: #c9d0d9;
+  --color-asphalt-100: #e8ecf1;
+
+  /* Racing red accent */
+  --color-racing-400: #ff3b33;
+  --color-racing-500: #e10600;
+  --color-racing-600: #b80500;
+
+  /* Amber secondary (instrument-cluster glow) */
+  --color-amber-glow-400: #ffb84d;
+  --color-amber-glow-500: #f5a623;
+  --color-amber-glow-600: #d18a12;
+
+  --shadow-glow-red: 0 0 24px 0 rgb(225 6 0 / 0.35);
+  --shadow-glow-amber: 0 0 24px 0 rgb(245 166 35 / 0.3);
+  --shadow-card: 0 10px 30px -12px rgb(0 0 0 / 0.6);
+
+  --animate-dash: dash 1.4s ease-out forwards;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: var(--dash-length, 1000);
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-asphalt-900 text-asphalt-200 font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(225 6 0 / 0.08), transparent 60%),
+      linear-gradient(to bottom, #0b0d10, #0b0d10);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold tracking-wide text-asphalt-100;
+  }
+
+  ::selection {
+    @apply bg-racing-500 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-racing-500 ring-offset-2 ring-offset-asphalt-900;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Motif utilities
+   ------------------------------------------------------------------ */
+@utility racing-stripe {
+  /* Thin diagonal red/white/red stripe – used under the navbar and on headings */
+  background-image: repeating-linear-gradient(
+    -55deg,
+    var(--color-racing-500) 0 10px,
+    var(--color-asphalt-100) 10px 14px,
+    var(--color-racing-500) 14px 24px,
+    transparent 24px 36px
+  );
+}
+
+@utility checkered {
+  /* Checkered-flag pattern – used sparingly as a divider */
+  background-color: var(--color-asphalt-800);
+  background-image:
+    linear-gradient(45deg, var(--color-asphalt-100) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--color-asphalt-100) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--color-asphalt-100) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--color-asphalt-100) 75%);
+  background-size: 16px 16px;
+  background-position:
+    0 0,
+    0 8px,
+    8px -8px,
+    -8px 0;
+}
+
+@utility carbon {
+  /* Subtle carbon-fibre weave for surfaces */
+  background-color: var(--color-asphalt-800);
+  background-image:
+    linear-gradient(27deg, #1a1e24 5px, transparent 5px),
+    linear-gradient(207deg, #1a1e24 5px, transparent 5px),
+    linear-gradient(27deg, #12151a 5px, transparent 5px),
+    linear-gradient(207deg, #12151a 5px, transparent 5px),
+    linear-gradient(90deg, #15181d 10px, transparent 10px),
+    linear-gradient(#171b20 25%, #131619 25%, #131619 50%, transparent 50%, transparent 75%, #1b1f25 75%, #1b1f25);
+  background-size: 20px 20px;
+  background-position:
+    0 5px,
+    10px 0,
+    0 10px,
+    10px 5px,
+    0 0,
+    0 0;
+}
+
+@utility grid-fade {
+  /* Faint blueprint grid that fades out toward the bottom */
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+@utility text-glow-red {
+  text-shadow: 0 0 18px rgb(225 6 0 / 0.55);
+}
+
+@utility text-glow-amber {
+  text-shadow: 0 0 18px rgb(245 166 35 / 0.5);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility surface {
+  @apply bg-asphalt-800/80 border border-asphalt-700 rounded-xl shadow-card backdrop-blur-sm;
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
