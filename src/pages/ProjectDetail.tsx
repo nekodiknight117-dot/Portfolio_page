@@ -21,7 +21,7 @@ function Section({ icon: Icon, title, children }: SectionProps) {
   return (
     <section className="scroll-mt-24">
       <h2 className="flex items-center gap-3 text-2xl">
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-racing-500/15 text-racing-400">
+        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-400">
           <Icon size={18} />
         </span>
         {title}
@@ -36,7 +36,7 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="space-y-2">
       {items.map((item) => (
         <li key={item} className="flex gap-3">
-          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-amber-glow-500" />
+          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-highlight-500" />
           <span>{item}</span>
         </li>
       ))}
@@ -62,8 +62,8 @@ export function ProjectDetail() {
 
       <article className="container-page py-12 lg:py-16">
         <Link
-          to="/projects"
-          className="inline-flex items-center gap-1.5 font-display text-sm font-semibold uppercase tracking-wider text-asphalt-300 hover:text-white"
+          to="/#projects"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-asphalt-300 hover:text-white"
         >
           <ArrowLeft size={16} /> Back to projects
         </Link>
@@ -71,7 +71,7 @@ export function ProjectDetail() {
         {/* Header */}
         <header className="mt-6 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-racing-500">
+            <p className="eyebrow">
               Project / {project.year}
             </p>
             <h1 className="mt-2 text-4xl sm:text-5xl">{project.title}</h1>
@@ -107,11 +107,11 @@ export function ProjectDetail() {
             <Section icon={Target} title="The Problem & Solution">
               <div className="grid gap-4 sm:grid-cols-2">
                 <Card className="p-5">
-                  <p className="mb-2 font-display text-xs font-semibold uppercase tracking-[0.25em] text-racing-500">Problem</p>
+                  <p className="mb-2 eyebrow">Problem</p>
                   <p>{details.problem}</p>
                 </Card>
                 <Card className="p-5">
-                  <p className="mb-2 font-display text-xs font-semibold uppercase tracking-[0.25em] text-amber-glow-500">Solution</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-highlight-400">Solution</p>
                   <p>{details.solution}</p>
                 </Card>
               </div>
@@ -128,11 +128,11 @@ export function ProjectDetail() {
             <Section icon={Lightbulb} title="Challenges & Lessons Learned">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.25em] text-racing-500">Challenges</p>
+                  <p className="mb-3 eyebrow">Challenges</p>
                   <BulletList items={details.challenges} />
                 </div>
                 <div>
-                  <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.25em] text-amber-glow-500">Lessons</p>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-highlight-400">Lessons</p>
                   <BulletList items={details.lessons} />
                 </div>
               </div>
@@ -142,7 +142,7 @@ export function ProjectDetail() {
           {/* Spec sheet sidebar */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <Card className="p-5">
-              <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-racing-500">Spec Sheet</p>
+              <p className="eyebrow">Overview</p>
               <dl className="mt-4 space-y-3 text-sm">
                 <div className="flex justify-between gap-4 border-b border-asphalt-700 pb-3">
                   <dt className="text-asphalt-400">Year</dt>
@@ -192,9 +192,9 @@ export function ProjectDetail() {
         {/* Prev / next */}
         <nav className="mt-16 grid gap-4 border-t border-asphalt-700 pt-8 sm:grid-cols-2" aria-label="Project navigation">
           {prev ? (
-            <Link to={`/projects/${prev.slug}`} className="group surface p-4 transition-colors hover:border-racing-500/70">
-              <span className="font-display text-xs uppercase tracking-[0.25em] text-asphalt-400">Previous</span>
-              <span className="mt-1 flex items-center gap-2 font-display text-lg font-semibold text-asphalt-100 group-hover:text-racing-400">
+            <Link to={`/projects/${prev.slug}`} className="group surface p-4 transition-colors hover:border-asphalt-400">
+              <span className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Previous</span>
+              <span className="mt-1 flex items-center gap-2 font-display text-lg font-semibold text-asphalt-100 group-hover:text-accent-400">
                 <ArrowLeft size={18} /> {prev.title}
               </span>
             </Link>
@@ -202,9 +202,9 @@ export function ProjectDetail() {
             <span />
           )}
           {next && (
-            <Link to={`/projects/${next.slug}`} className="group surface p-4 text-right transition-colors hover:border-racing-500/70">
-              <span className="font-display text-xs uppercase tracking-[0.25em] text-asphalt-400">Next</span>
-              <span className="mt-1 flex items-center justify-end gap-2 font-display text-lg font-semibold text-asphalt-100 group-hover:text-racing-400">
+            <Link to={`/projects/${next.slug}`} className="group surface p-4 text-right transition-colors hover:border-asphalt-400">
+              <span className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Next</span>
+              <span className="mt-1 flex items-center justify-end gap-2 font-display text-lg font-semibold text-asphalt-100 group-hover:text-accent-400">
                 {next.title} <ArrowRight size={18} />
               </span>
             </Link>

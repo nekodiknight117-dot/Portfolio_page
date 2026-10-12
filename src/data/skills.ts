@@ -1,52 +1,60 @@
 import type { Skill, SkillCategory } from '../types'
 
 /**
- * PLACEHOLDER CONTENT - adjust names, levels (0-100), and categories.
+ * Skills from Nekodi Knight's resume. `level` (0-100) is a self-assessed
+ * proficiency shown on the gauges; adjust the numbers to taste.
  */
 export const skills: Skill[] = [
   // Languages
-  { name: 'TypeScript', level: 92, category: 'Languages' },
-  { name: 'JavaScript', level: 92, category: 'Languages' },
-  { name: 'Python', level: 78, category: 'Languages' },
-  { name: 'SQL', level: 82, category: 'Languages' },
-  { name: 'Java', level: 65, category: 'Languages' },
-  { name: 'C#', level: 55, category: 'Languages' },
+  { name: 'Python', level: 90, category: 'Languages' },
+  { name: 'Java', level: 85, category: 'Languages' },
+  { name: 'SQL', level: 80, category: 'Languages' },
+  { name: 'JavaScript', level: 78, category: 'Languages' },
+  { name: 'Bash', level: 72, category: 'Languages' },
 
   // Frameworks
-  { name: 'React', level: 93, category: 'Frameworks' },
-  { name: 'Next.js', level: 85, category: 'Frameworks' },
-  { name: 'Node.js / Express', level: 88, category: 'Frameworks' },
-  { name: 'Tailwind CSS', level: 90, category: 'Frameworks' },
-  { name: 'FastAPI', level: 70, category: 'Frameworks' },
-  { name: 'Vue', level: 60, category: 'Frameworks' },
+  { name: 'FastAPI', level: 88, category: 'Frameworks' },
+  { name: 'React', level: 80, category: 'Frameworks' },
+  { name: 'PyTorch', level: 75, category: 'Frameworks' },
+  { name: 'SQLAlchemy', level: 80, category: 'Frameworks' },
+  { name: 'Pandas', level: 82, category: 'Frameworks' },
+  { name: 'Tailwind CSS', level: 74, category: 'Frameworks' },
 
   // Databases
-  { name: 'PostgreSQL', level: 85, category: 'Databases' },
-  { name: 'MongoDB', level: 78, category: 'Databases' },
-  { name: 'Redis', level: 72, category: 'Databases' },
-  { name: 'SQLite', level: 80, category: 'Databases' },
-  { name: 'Prisma ORM', level: 83, category: 'Databases' },
+  { name: 'Relational SQL', level: 80, category: 'Databases' },
+  { name: 'SQLAlchemy ORM', level: 80, category: 'Databases' },
+  { name: 'Data Modeling', level: 76, category: 'Databases' },
+
+  // Security & Compliance
+  { name: 'RMF / A&A', level: 82, category: 'Security & Compliance' },
+  { name: 'NIST SP 800-53', level: 80, category: 'Security & Compliance' },
+  { name: 'DISA STIGs', level: 78, category: 'Security & Compliance' },
+  { name: 'Risk Assessment', level: 80, category: 'Security & Compliance' },
+  { name: 'Incident Response', level: 75, category: 'Security & Compliance' },
+  { name: 'TCP/IP & OSI', level: 85, category: 'Security & Compliance' },
 
   // Tools
-  { name: 'Git & GitHub', level: 92, category: 'Tools' },
-  { name: 'Docker', level: 78, category: 'Tools' },
-  { name: 'Vite', level: 88, category: 'Tools' },
-  { name: 'Vitest / Jest', level: 80, category: 'Tools' },
-  { name: 'Storybook', level: 70, category: 'Tools' },
-  { name: 'Figma', level: 60, category: 'Tools' },
+  { name: 'Splunk', level: 78, category: 'Tools' },
+  { name: 'Snort', level: 75, category: 'Tools' },
+  { name: 'Wireshark', level: 80, category: 'Tools' },
+  { name: 'Nmap', level: 80, category: 'Tools' },
+  { name: 'Git & GitHub', level: 85, category: 'Tools' },
+  { name: 'Vite', level: 78, category: 'Tools' },
+  { name: 'VS Code / Cursor', level: 90, category: 'Tools' },
 
   // Platforms
-  { name: 'AWS', level: 72, category: 'Platforms' },
-  { name: 'Vercel', level: 88, category: 'Platforms' },
-  { name: 'Netlify', level: 80, category: 'Platforms' },
-  { name: 'GitHub Actions', level: 82, category: 'Platforms' },
-  { name: 'Linux', level: 78, category: 'Platforms' },
+  { name: 'Linux', level: 82, category: 'Platforms' },
+  { name: 'Windows 10+', level: 88, category: 'Platforms' },
+  { name: 'Active Directory', level: 85, category: 'Platforms' },
+  { name: 'Office 365', level: 85, category: 'Platforms' },
+  { name: 'Virtualization', level: 74, category: 'Platforms' },
 ]
 
 export const skillCategories: SkillCategory[] = [
   'Languages',
   'Frameworks',
   'Databases',
+  'Security & Compliance',
   'Tools',
   'Platforms',
 ]
@@ -54,3 +62,9 @@ export const skillCategories: SkillCategory[] = [
 export function skillsByCategory(category: SkillCategory): Skill[] {
   return skills.filter((s) => s.category === category)
 }
+
+/** Certifications shown on the Skills and Resume pages. */
+export const certifications: { name: string; status?: string }[] = [
+  { name: 'CompTIA Security+ (SY0-701)' },
+  { name: 'CompTIA Network+ (N10-009)', status: 'In progress' },
+]

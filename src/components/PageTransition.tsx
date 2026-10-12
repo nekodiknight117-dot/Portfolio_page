@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
-/** Light fade/slide applied to each page on mount. */
+/**
+ * Light fade applied to each page on mount. Opacity only: a translate here would
+ * shift anchored sections after the layout has already scrolled to them.
+ */
 export function PageTransition({ children }: { children: ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
     >
       {children}

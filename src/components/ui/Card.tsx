@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react'
 import { cn } from '../../lib/cn'
 
 interface CardProps extends ComponentPropsWithoutRef<'div'> {
-  /** Adds a red hover border + lift. */
+  /** Adds a hover border highlight + lift. */
   interactive?: boolean
 }
 
@@ -12,7 +12,7 @@ export function Card({ className, interactive = false, children, ...rest }: Card
       className={cn(
         'surface relative overflow-hidden',
         interactive &&
-          'transition-all duration-300 hover:-translate-y-1 hover:border-racing-500/70 hover:shadow-glow-red',
+          'transition-all duration-300 hover:-translate-y-1 hover:border-asphalt-500 hover:shadow-glow',
         className,
       )}
       {...rest}

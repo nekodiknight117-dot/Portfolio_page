@@ -35,7 +35,7 @@ function validate(v: FormValues): Errors {
 }
 
 const fieldClass =
-  'w-full rounded-md border border-asphalt-600 bg-asphalt-900 px-3.5 py-2.5 text-asphalt-100 placeholder:text-asphalt-500 transition-colors focus:border-racing-500'
+  'w-full rounded-lg border border-asphalt-600 bg-asphalt-900 px-3.5 py-2.5 text-asphalt-100 placeholder:text-asphalt-500 transition-colors focus:border-accent-500'
 
 export function ContactForm() {
   const [values, setValues] = useState<FormValues>(initial)
@@ -96,7 +96,7 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div className="surface flex flex-col items-center p-10 text-center" role="status">
-        <CheckCircle2 size={44} className="text-amber-glow-400" />
+        <CheckCircle2 size={44} className="text-highlight-400" />
         <h3 className="mt-4 text-2xl">Message sent</h3>
         <p className="mt-2 max-w-sm text-asphalt-300">
           Thanks for reaching out. I will get back to you as soon as I can, usually within a day or two.
@@ -111,7 +111,7 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="surface space-y-5 p-6 sm:p-8">
       {!configured && (
-        <p className="rounded-md border border-amber-glow-500/40 bg-amber-glow-500/10 px-3 py-2 text-xs text-amber-glow-400">
+        <p className="rounded-lg border border-highlight-500/40 bg-highlight-500/10 px-3 py-2 text-xs text-highlight-400">
           EmailJS is not configured yet, so submitting will open your email client instead. See the README to enable
           direct sending.
         </p>
@@ -126,7 +126,7 @@ export function ContactForm() {
             autoComplete="name"
             value={values.name}
             onChange={onChange('name')}
-            className={cn(fieldClass, errors.name && 'border-racing-500')}
+            className={cn(fieldClass, errors.name && 'border-accent-500')}
             placeholder="Jane Doe"
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? 'name-error' : undefined}
@@ -140,7 +140,7 @@ export function ContactForm() {
             autoComplete="email"
             value={values.email}
             onChange={onChange('email')}
-            className={cn(fieldClass, errors.email && 'border-racing-500')}
+            className={cn(fieldClass, errors.email && 'border-accent-500')}
             placeholder="jane@example.com"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? 'email-error' : undefined}
@@ -155,7 +155,7 @@ export function ContactForm() {
           type="text"
           value={values.subject}
           onChange={onChange('subject')}
-          className={cn(fieldClass, errors.subject && 'border-racing-500')}
+          className={cn(fieldClass, errors.subject && 'border-accent-500')}
           placeholder="Let's build something"
           aria-invalid={Boolean(errors.subject)}
           aria-describedby={errors.subject ? 'subject-error' : undefined}
@@ -169,7 +169,7 @@ export function ContactForm() {
           rows={6}
           value={values.message}
           onChange={onChange('message')}
-          className={cn(fieldClass, 'resize-y', errors.message && 'border-racing-500')}
+          className={cn(fieldClass, 'resize-y', errors.message && 'border-accent-500')}
           placeholder="Tell me about your project, role, or idea..."
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? 'message-error' : undefined}
@@ -183,7 +183,7 @@ export function ContactForm() {
       </div>
 
       {status === 'error' && (
-        <p role="alert" className="flex items-start gap-2 rounded-md border border-racing-500/50 bg-racing-500/10 px-3 py-2 text-sm text-racing-400">
+        <p role="alert" className="flex items-start gap-2 rounded-lg border border-red-500/50 bg-red-500/10 px-3 py-2 text-sm text-red-400">
           <AlertTriangle size={16} className="mt-0.5 shrink-0" />
           <span>{serverError ?? 'Could not send your message. Please try again or email me directly.'}</span>
         </p>
@@ -220,12 +220,12 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={htmlFor} className="mb-1.5 block font-display text-xs font-semibold uppercase tracking-[0.2em] text-asphalt-300">
+      <label htmlFor={htmlFor} className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-asphalt-300">
         {label}
       </label>
       {children}
       {error && (
-        <p id={`${htmlFor}-error`} className="mt-1.5 text-xs text-racing-400">
+        <p id={`${htmlFor}-error`} className="mt-1.5 text-xs text-red-400">
           {error}
         </p>
       )}

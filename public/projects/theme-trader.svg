@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-label="Theme-Trader placeholder screenshot">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="540" fill="#0b0d10"/>
+  <rect width="1200" height="540" fill="url(#grid)"/>
+  <rect x="40" y="40" width="1120" height="460" rx="14" fill="#15181d" stroke="#2b323b"/>
+  <rect x="40" y="40" width="1120" height="48" rx="14" fill="#1f242b"/>
+  <rect x="40" y="74" width="1120" height="14" fill="#1f242b"/>
+  <circle cx="70" cy="64" r="6" fill="#3b82f6"/>
+  <circle cx="92" cy="64" r="6" fill="#38bdf8"/>
+  <circle cx="114" cy="64" r="6" fill="#3a434e"/>
+  <rect x="440" y="54" width="320" height="20" rx="10" fill="#0b0d10"/>
+  <text x="80" y="124" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#e8ecf1" letter-spacing="2">THEME-TRADER</text>
+  <text x="1120" y="124" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#6b7684" letter-spacing="3">PLACEHOLDER SCREENSHOT</text>
+  <!-- portfolio cards -->
+  <rect x="80" y="150" width="240" height="90" rx="8" fill="#1f242b"/>
+  <rect x="96" y="166" width="90" height="12" rx="3" fill="#3a434e"/>
+  <text x="96" y="218" font-family="Arial" font-size="26" font-weight="700" fill="#38bdf8">+12.4%</text>
+  <rect x="340" y="150" width="240" height="90" rx="8" fill="#1f242b"/>
+  <rect x="356" y="166" width="120" height="12" rx="3" fill="#3a434e"/>
+  <text x="356" y="218" font-family="Arial" font-size="26" font-weight="700" fill="#e8ecf1">$48,210</text>
+  <rect x="600" y="150" width="240" height="90" rx="8" fill="#1f242b"/>
+  <rect x="616" y="166" width="100" height="12" rx="3" fill="#3a434e"/>
+  <text x="616" y="218" font-family="Arial" font-size="26" font-weight="700" fill="#60a5fa">VOL 0.82</text>
+  <rect x="860" y="150" width="260" height="90" rx="8" fill="#1f242b"/>
+  <rect x="876" y="166" width="110" height="12" rx="3" fill="#3a434e"/>
+  <text x="876" y="218" font-family="Arial" font-size="18" font-weight="700" fill="#e8ecf1">LIVE &#183; WEBSOCKET</text>
+  <circle cx="1095" cy="210" r="6" fill="#3b82f6"/>
+  <!-- price chart -->
+  <path d="M80 470 L80 430 L170 410 L260 440 L350 380 L440 395 L530 340 L620 360 L710 300 L800 320 L890 260 L980 280 L1070 230 L1120 240 L1120 470 Z" fill="url(#area)"/>
+  <polyline fill="none" stroke="#38bdf8" stroke-width="3" points="80,430 170,410 260,440 350,380 440,395 530,340 620,360 710,300 800,320 890,260 980,280 1070,230 1120,240"/>
+  <rect x="40" y="494" width="1120" height="4" fill="#38bdf8"/>
+</svg>

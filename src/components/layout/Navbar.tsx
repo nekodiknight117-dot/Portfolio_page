@@ -1,18 +1,34 @@
-import { Gauge, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router'
+import { Link, useLocation } from 'react-router'
 import { profile } from '../../data/profile'
 import { cn } from '../../lib/cn'
-import { RacingStripe } from '../ui/RacingStripe'
+import { useActiveSection } from '../../lib/useActiveSection'
 import { MobileMenu } from './MobileMenu'
-import { navItems } from './nav'
+import { navItems, sectionIds } from './nav'
+
+const initials = profile.name
+  .split(/\s+/)
+  .map((part) => part[0])
+  .join('')
+  .slice(0, 2)
+  .toUpperCase()
+
+/** Which nav item should be highlighted for the current route + scroll position. */
+function useActiveNavId(): string | null {
+  const { pathname } = useLocation()
+  const onHome = pathname === '/'
+  const activeSection = useActiveSection(sectionIds, onHome)
+  if (onHome) return activeSection
+  if (pathname.startsWith('/projects')) return 'projects'
+  return null
+}
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const activeId = useActiveNavId()
 
-  // The mobile drawer closes itself on link click (see MobileMenu); the logo
-  // link also closes it via onClick below.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
     onScroll()
@@ -30,33 +46,32 @@ export function Navbar() {
       >
         <nav className="container-page flex h-16 items-center justify-between" aria-label="Primary">
           <Link to="/" className="group flex items-center gap-2.5" onClick={() => setOpen(false)}>
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-racing-500 text-white shadow-glow-red transition-transform group-hover:rotate-12">
-              <Gauge size={20} strokeWidth={2.5} />
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500 font-display text-sm font-bold text-white">
+              {initials}
             </span>
-            <span className="font-display text-xl font-bold uppercase tracking-wider text-asphalt-100">
-              {profile.name}
-            </span>
+            <span className="font-display text-lg font-semibold text-asphalt-100">{profile.name}</span>
           </Link>
 
           <ul className="hidden items-center gap-1 lg:flex">
-            {navItems.map((item) => (
-              <li key={item.to}>
-                <NavLink
-                  to={item.to}
-                  end={item.to === '/'}
-                  className={({ isActive }) =>
-                    cn(
-                      'relative block px-3 py-2 font-display text-sm font-semibold uppercase tracking-wider transition-colors',
+            {navItems.map((item) => {
+              const isActive = item.id === activeId
+              return (
+                <li key={item.id}>
+                  <Link
+                    to={item.to}
+                    aria-current={isActive ? 'location' : undefined}
+                    className={cn(
+                      'relative block px-3 py-2 text-sm font-medium transition-colors',
                       isActive ? 'text-white' : 'text-asphalt-300 hover:text-white',
-                      'after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-racing-500 after:transition-transform after:duration-300 after:content-[""]',
+                      'after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-accent-500 after:transition-transform after:duration-300 after:content-[""]',
                       isActive ? 'after:scale-x-100' : 'after:scale-x-0 hover:after:scale-x-100',
-                    )
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
 
           <button
@@ -71,8 +86,7 @@ export function Navbar() {
           </button>
         </nav>
       </div>
-      <RacingStripe className="h-[3px]" />
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
+      <MobileMenu open={open} activeId={activeId} onClose={() => setOpen(false)} />
     </header>
   )
 }

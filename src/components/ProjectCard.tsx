@@ -31,11 +31,11 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <span className="absolute left-3 top-3 rounded bg-asphalt-950/80 px-2 py-0.5 font-display text-xs font-semibold uppercase tracking-wider text-amber-glow-400 backdrop-blur">
+          <span className="absolute left-3 top-3 rounded-md bg-asphalt-950/80 px-2 py-0.5 text-xs font-medium text-asphalt-200 backdrop-blur">
             {project.year}
           </span>
           {project.featured && (
-            <span className="absolute right-3 top-3 rounded bg-racing-500 px-2 py-0.5 font-display text-xs font-semibold uppercase tracking-wider text-white">
+            <span className="absolute right-3 top-3 rounded-md bg-accent-500 px-2 py-0.5 text-xs font-medium text-white">
               Featured
             </span>
           )}
@@ -43,7 +43,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
         <div className="flex flex-1 flex-col p-5">
           <h3 className="text-xl">
-            <Link to={detailHref} className="hover:text-racing-400 transition-colors">
+            <Link to={detailHref} className="hover:text-accent-400 transition-colors">
               {project.title}
             </Link>
           </h3>
@@ -65,7 +65,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           <div className="mt-5 flex items-center justify-between border-t border-asphalt-700 pt-4">
             <Link
               to={detailHref}
-              className="inline-flex items-center gap-1 font-display text-sm font-semibold uppercase tracking-wider text-racing-400 hover:text-racing-500"
+              className="inline-flex items-center gap-1 text-sm font-medium text-accent-400 hover:text-accent-300"
             >
               Details <ArrowUpRight size={16} />
             </Link>

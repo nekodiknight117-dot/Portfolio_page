@@ -6,13 +6,12 @@ type Variant = 'primary' | 'secondary' | 'ghost'
 type Size = 'sm' | 'md' | 'lg'
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-md font-display font-semibold uppercase tracking-wider transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none'
+  'inline-flex items-center justify-center gap-2 rounded-lg font-display font-semibold transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none'
 
 const variants: Record<Variant, string> = {
-  primary:
-    'bg-racing-500 text-white hover:bg-racing-400 hover:shadow-glow-red active:bg-racing-600',
+  primary: 'bg-accent-500 text-white hover:bg-accent-400 hover:shadow-glow active:bg-accent-600',
   secondary:
-    'border border-asphalt-600 bg-asphalt-800 text-asphalt-100 hover:border-racing-500 hover:text-white',
+    'border border-asphalt-600 bg-asphalt-800 text-asphalt-100 hover:border-asphalt-400 hover:bg-asphalt-700 hover:text-white',
   ghost: 'text-asphalt-200 hover:text-white hover:bg-asphalt-800',
 }
 

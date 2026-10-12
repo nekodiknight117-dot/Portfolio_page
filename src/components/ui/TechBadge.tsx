@@ -10,11 +10,11 @@ interface TechBadgeProps {
 /** Small pill used for technologies. Becomes a toggle button when `onClick` is set. */
 export function TechBadge({ label, active = false, onClick, className }: TechBadgeProps) {
   const classes = cn(
-    'inline-flex items-center rounded border px-2.5 py-1 font-display text-xs font-semibold uppercase tracking-wider transition-colors',
+    'inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-medium transition-colors',
     active
-      ? 'border-racing-500 bg-racing-500/15 text-racing-400'
+      ? 'border-accent-500/60 bg-accent-500/15 text-accent-400'
       : 'border-asphalt-600 bg-asphalt-800 text-asphalt-300',
-    onClick && 'cursor-pointer hover:border-racing-500 hover:text-asphalt-100',
+    onClick && 'cursor-pointer hover:border-asphalt-400 hover:text-asphalt-100',
     className,
   )
 

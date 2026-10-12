@@ -29,6 +29,7 @@ export interface Profile {
   tagline: string
   location: string
   email: string
+  phone?: string
   photo: string
   /** Short intro shown on the Home hero. */
   intro: string
@@ -68,6 +69,7 @@ export type SkillCategory =
   | 'Languages'
   | 'Frameworks'
   | 'Databases'
+  | 'Security & Compliance'
   | 'Tools'
   | 'Platforms'
 
@@ -78,7 +80,7 @@ export interface Skill {
   category: SkillCategory
 }
 
-export type ExperienceType = 'Job' | 'Internship' | 'Freelance' | 'Volunteering'
+export type ExperienceType = 'Job' | 'Internship' | 'Fellowship' | 'Freelance' | 'Volunteering'
 
 export interface Experience {
   id: string
@@ -97,7 +99,8 @@ export interface Education {
   institution: string
   degree: string
   field: string
-  start: string
+  /** Optional start year; omit to show only the completion year. */
+  start?: string
   end: string
   highlights?: string[]
 }

@@ -8,26 +8,18 @@ const year = new Date().getFullYear()
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-asphalt-700">
-      <div aria-hidden className="checkered h-3 w-full opacity-60" />
       <div className="container-page grid gap-10 py-12 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl font-bold uppercase tracking-wider text-asphalt-100">
-            {profile.name}
-          </p>
+          <p className="font-display text-xl font-semibold text-asphalt-100">{profile.name}</p>
           <p className="mt-2 max-w-xs text-sm text-asphalt-300">{profile.tagline}</p>
         </div>
 
         <nav aria-label="Footer">
-          <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.3em] text-racing-500">
-            Navigate
-          </p>
+          <p className="eyebrow mb-3">Navigate</p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
             {navItems.map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  className="text-sm text-asphalt-300 transition-colors hover:text-white"
-                >
+              <li key={item.id}>
+                <Link to={item.to} className="text-sm text-asphalt-300 transition-colors hover:text-white">
                   {item.label}
                 </Link>
               </li>
@@ -36,9 +28,7 @@ export function Footer() {
         </nav>
 
         <div>
-          <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.3em] text-racing-500">
-            Connect
-          </p>
+          <p className="eyebrow mb-3">Connect</p>
           <ul className="flex gap-3">
             {profile.socials.map((s) => (
               <li key={s.label}>
@@ -47,7 +37,7 @@ export function Footer() {
                   target={s.url.startsWith('mailto:') ? undefined : '_blank'}
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-md border border-asphalt-600 text-asphalt-200 transition-colors hover:border-racing-500 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-asphalt-600 text-asphalt-200 transition-colors hover:border-asphalt-400 hover:text-white"
                 >
                   <SocialIcon icon={s.icon} size={18} />
                 </a>
@@ -62,7 +52,7 @@ export function Footer() {
           <p>
             &copy; {year} {profile.name}. All rights reserved.
           </p>
-          <p className="font-display uppercase tracking-wider">Built with React, TypeScript, and Tailwind CSS</p>
+          <p>Built with React, TypeScript, and Tailwind CSS</p>
         </div>
       </div>
     </footer>

@@ -1,17 +1,15 @@
 @import 'tailwindcss';
-@import '@fontsource/rajdhani/500.css';
-@import '@fontsource/rajdhani/600.css';
-@import '@fontsource/rajdhani/700.css';
+@import '@fontsource-variable/manrope';
 @import '@fontsource-variable/inter';
 
 /* ------------------------------------------------------------------
-   Theme tokens: "professional motorsport dashboard"
+   Theme tokens: dark, professional
    ------------------------------------------------------------------ */
 @theme {
-  --font-display: 'Rajdhani', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 
-  /* Asphalt / carbon neutrals */
+  /* Neutral surfaces */
   --color-asphalt-950: #07080a;
   --color-asphalt-900: #0b0d10;
   --color-asphalt-800: #15181d;
@@ -23,31 +21,20 @@
   --color-asphalt-200: #c9d0d9;
   --color-asphalt-100: #e8ecf1;
 
-  /* Racing red accent */
-  --color-racing-400: #ff3b33;
-  --color-racing-500: #e10600;
-  --color-racing-600: #b80500;
+  /* Primary accent (blue) */
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
 
-  /* Amber secondary (instrument-cluster glow) */
-  --color-amber-glow-400: #ffb84d;
-  --color-amber-glow-500: #f5a623;
-  --color-amber-glow-600: #d18a12;
+  /* Secondary highlight (sky) */
+  --color-highlight-400: #7dd3fc;
+  --color-highlight-500: #38bdf8;
+  --color-highlight-600: #0ea5e9;
 
-  --shadow-glow-red: 0 0 24px 0 rgb(225 6 0 / 0.35);
-  --shadow-glow-amber: 0 0 24px 0 rgb(245 166 35 / 0.3);
+  --shadow-glow: 0 0 0 1px rgb(59 130 246 / 0.25), 0 8px 24px -8px rgb(59 130 246 / 0.35);
   --shadow-card: 0 10px 30px -12px rgb(0 0 0 / 0.6);
 
-  --animate-dash: dash 1.4s ease-out forwards;
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-
-  @keyframes dash {
-    from {
-      stroke-dashoffset: var(--dash-length, 1000);
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
 }
 
 /* ------------------------------------------------------------------
@@ -62,7 +49,7 @@
   body {
     @apply bg-asphalt-900 text-asphalt-200 font-sans antialiased;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(225 6 0 / 0.08), transparent 60%),
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(59 130 246 / 0.08), transparent 60%),
       linear-gradient(to bottom, #0b0d10, #0b0d10);
     background-attachment: fixed;
   }
@@ -71,83 +58,33 @@
   h2,
   h3,
   h4 {
-    @apply font-display font-semibold tracking-wide text-asphalt-100;
+    @apply font-display font-semibold tracking-tight text-asphalt-100;
   }
 
   ::selection {
-    @apply bg-racing-500 text-white;
+    @apply bg-accent-500 text-white;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-racing-500 ring-offset-2 ring-offset-asphalt-900;
+    @apply outline-none ring-2 ring-accent-500 ring-offset-2 ring-offset-asphalt-900;
   }
 }
 
 /* ------------------------------------------------------------------
-   Motif utilities
+   Utilities
    ------------------------------------------------------------------ */
-@utility racing-stripe {
-  /* Thin diagonal red/white/red stripe – used under the navbar and on headings */
-  background-image: repeating-linear-gradient(
-    -55deg,
-    var(--color-racing-500) 0 10px,
-    var(--color-asphalt-100) 10px 14px,
-    var(--color-racing-500) 14px 24px,
-    transparent 24px 36px
-  );
-}
-
-@utility checkered {
-  /* Checkered-flag pattern – used sparingly as a divider */
-  background-color: var(--color-asphalt-800);
-  background-image:
-    linear-gradient(45deg, var(--color-asphalt-100) 25%, transparent 25%),
-    linear-gradient(-45deg, var(--color-asphalt-100) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, var(--color-asphalt-100) 75%),
-    linear-gradient(-45deg, transparent 75%, var(--color-asphalt-100) 75%);
-  background-size: 16px 16px;
-  background-position:
-    0 0,
-    0 8px,
-    8px -8px,
-    -8px 0;
-}
-
-@utility carbon {
-  /* Subtle carbon-fibre weave for surfaces */
-  background-color: var(--color-asphalt-800);
-  background-image:
-    linear-gradient(27deg, #1a1e24 5px, transparent 5px),
-    linear-gradient(207deg, #1a1e24 5px, transparent 5px),
-    linear-gradient(27deg, #12151a 5px, transparent 5px),
-    linear-gradient(207deg, #12151a 5px, transparent 5px),
-    linear-gradient(90deg, #15181d 10px, transparent 10px),
-    linear-gradient(#171b20 25%, #131619 25%, #131619 50%, transparent 50%, transparent 75%, #1b1f25 75%, #1b1f25);
-  background-size: 20px 20px;
-  background-position:
-    0 5px,
-    10px 0,
-    0 10px,
-    10px 5px,
-    0 0,
-    0 0;
+@utility accent-line {
+  /* Short solid accent bar used under section headings */
+  background: linear-gradient(90deg, var(--color-accent-500), var(--color-highlight-500));
 }
 
 @utility grid-fade {
-  /* Faint blueprint grid that fades out toward the bottom */
+  /* Faint grid that fades out toward the bottom (hero background) */
   background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-}
-
-@utility text-glow-red {
-  text-shadow: 0 0 18px rgb(225 6 0 / 0.55);
-}
-
-@utility text-glow-amber {
-  text-shadow: 0 0 18px rgb(245 166 35 / 0.5);
 }
 
 @utility tabular {
@@ -160,4 +97,8 @@
 
 @utility container-page {
   @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility eyebrow {
+  @apply font-display text-xs font-semibold uppercase tracking-[0.18em] text-accent-400;
 }

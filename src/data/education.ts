@@ -1,56 +1,49 @@
 import type { Education, Interest } from '../types'
 
 /**
- * PLACEHOLDER CONTENT - replace with your education, goals, and interests.
+ * Education from Nekodi Knight's resume. Career goals and interests are
+ * written to match the resume's direction; edit the wording freely.
  */
 export const education: Education[] = [
   {
-    institution: 'University of Toronto',
+    institution: 'Brooklyn College, City University of New York',
     degree: 'Bachelor of Science',
-    field: 'Computer Science',
-    start: '2020',
-    end: '2024',
+    field: 'Information Systems',
+    end: '2026',
     highlights: [
-      'Specialist in Software Engineering; minor in Mechanical Engineering electives',
-      'Capstone: real-time telemetry pipeline for the Formula SAE team',
-      'Dean\u2019s List, 2022 and 2023',
+      'Graduated Magna Cum Laude',
+      'Teaching Assistant for Intro to Modern Programming Techniques (Java)',
+      'Capstone (CISC 4900): Swell Scan, an AI-driven DDoS intrusion-detection system',
     ],
-  },
-  {
-    institution: 'Online / Self-Directed',
-    degree: 'Certifications',
-    field: 'Cloud and Web',
-    start: '2022',
-    end: '2024',
-    highlights: ['AWS Certified Cloud Practitioner', 'Meta Front-End Developer Professional Certificate'],
   },
 ]
 
 export const careerGoals: string[] = [
-  'Grow into a senior full-stack role on a product team where performance and craftsmanship matter.',
-  'Work at the intersection of software and vehicles: telematics, connected-car platforms, or motorsport data.',
-  'Contribute to open-source developer tooling and mentor newer engineers along the way.',
+  'Land a role where software engineering and security overlap: building secure applications, detection tooling, or compliance automation.',
+  'Complete CompTIA Network+ and continue toward deeper security certifications while shipping production software.',
+  'Grow into an engineer who can design, build, and defend a system end to end, from the data pipeline to the SIEM dashboard.',
 ]
 
+// TODO: personalise these with your own hobbies.
 export const interests: Interest[] = [
   {
-    title: 'Project Car',
+    title: 'Automotive',
     description:
-      'Slowly restoring and lightly modifying a 90s sports coupe. Current focus: suspension refresh and a standalone ECU.',
+      'A long-standing interest in cars and motorsport, and in how well-engineered systems come together.',
   },
   {
-    title: 'Motorsport & Telemetry',
+    title: 'Security Research',
     description:
-      'Follow F1 and endurance racing closely, and spend weekends data-logging track days to shave tenths off lap times.',
+      'Hands-on labs with Snort, Splunk, and Wireshark, and keeping up with new attack techniques and defensive tooling.',
   },
   {
-    title: 'Sim Racing',
+    title: 'Applied AI',
     description:
-      'Compete in an amateur online league, which is how the Pit Wall strategy project got started.',
+      'Training models on real-world data, from network traffic to market volatility, and turning them into useful tools.',
   },
   {
-    title: 'Open Source',
+    title: 'Teaching & Mentoring',
     description:
-      'Maintain a small charting library and contribute fixes upstream to the tools I rely on daily.',
+      'Helping newer programmers get comfortable with Java and object-oriented design, as I did as a Teaching Assistant.',
   },
 ]

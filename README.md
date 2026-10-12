@@ -1,19 +1,23 @@
 # Portfolio
 
-A personal portfolio built with **React 19 + TypeScript + Vite**, styled with **Tailwind CSS v4** in a dark "motorsport dashboard" theme: asphalt and carbon surfaces, racing-red accents, speedometer gauges for skills, odometer counters for stats, and a track-style timeline for experience.
+A personal portfolio built with **React 19 + TypeScript + Vite**, styled with **Tailwind CSS v4** in a dark, professional theme: neutral surfaces, a blue accent, animated stat counters, skill bars, and a timeline for experience.
 
-## Pages
+## Structure
 
-| Route | Page | What it shows |
+The site is a single vertical scroller. Every nav link scrolls to a section of the home page, and the navbar highlights the section currently in view. Project write-ups are the only separate pages.
+
+| URL | Section / page | What it shows |
 | --- | --- | --- |
-| `/` | Home | Intro, photo, specialties, animated stats, featured projects |
-| `/projects` | Projects | All projects as cards with screenshots, tech badges, links, and a technology filter |
+| `/` (`#home`) | Home | Intro, photo, animated stats, specialties |
+| `/#projects` | Projects | All projects as cards with screenshots, tech badges, links, and a technology filter |
+| `/#about` | About | Bio, education & certifications, career goals, interests |
+| `/#skills` | Skills | Languages, frameworks, databases, security, tools, platforms with proficiency bars |
+| `/#experience` | Experience | Jobs, internships, fellowships, etc. on a filterable timeline |
+| `/#resume` | Resume | Online summary plus downloadable PDF |
+| `/#contact` | Contact | Email, LinkedIn, GitHub, and a contact form (EmailJS) |
 | `/projects/:slug` | Project Details | Problem & solution, features, technical decisions, technologies, challenges & lessons, repo and demo links |
-| `/about` | About | Bio, education, career goals, interests |
-| `/skills` | Skills | Languages, frameworks, databases, tools, platforms with gauges |
-| `/experience` | Experience | Jobs, internships, freelance, volunteering on a filterable timeline |
-| `/resume` | Resume | Online summary plus downloadable PDF |
-| `/contact` | Contact | Email, LinkedIn, GitHub, and a contact form (EmailJS) |
+
+Old per-page URLs (`/about`, `/skills`, ...) redirect to the matching section. Section order and nav labels live in `src/components/layout/nav.ts`.
 
 ## Getting started
 
@@ -46,9 +50,9 @@ The shapes are defined in `src/types.ts`, so your editor will flag any missing f
 
 ### Images and files
 
-- **Profile photo:** drop a file into `public/` (e.g. `public/me.jpg`) and set `photo: '/me.jpg'` in `profile.ts`. A square image works best.
-- **Project screenshots:** add images to `public/projects/` and point each project's `image` at them. 16:9 images work best. The current `.svg` files are placeholders.
-- **Resume PDF:** replace `public/resume.pdf` with your real resume (keep the filename, or update `resumePdf` in `profile.ts`). The current file is a one-page placeholder.
+- **Profile photo:** `public/nekodi-knight.jpg`, referenced by `photo` in `profile.ts`. To swap it, drop a new file into `public/` and update the path. Portrait photos are cropped from the top.
+- **Project screenshots:** add images to `public/projects/` and point each project's `image` at them. 16:9 images work best. The current `theme-trader.svg` and `swell-scan.svg` are placeholders until you capture real screenshots.
+- **Resume PDF:** `public/resume.pdf` is the real resume. Replace the file whenever you update it (keep the filename, or update `resumePdf` in `profile.ts`).
 - **Favicon:** `public/favicon.svg`.
 
 ## Contact form (EmailJS)
@@ -111,15 +115,16 @@ src/
   lib/                        # small helpers (cn, publicUrl)
   components/
     layout/                   # Navbar, MobileMenu, Footer, Layout
-    ui/                       # Button, Card, Gauge, Odometer, Timeline, TechBadge, SectionHeading, RacingStripe
+    ui/                       # Button, Card, SkillBar, StatCounter, Timeline, TechBadge, SectionHeading
     ProjectCard, ContactForm, SEO, SocialIcon, BrandIcons, PageTransition
-  pages/                      # one file per route
+  sections/                   # one file per section of the home scroller (+ shared Section wrapper)
+  pages/                      # Home (composes the sections), ProjectDetail, NotFound
 public/
-  profile-placeholder.svg, projects/*.svg, resume.pdf, favicon.svg
+  nekodi-knight.jpg, projects/*.svg, resume.pdf, favicon.svg
   404.html, _redirects        # SPA fallbacks for GitHub Pages / Netlify
 vercel.json                   # SPA fallback for Vercel
 ```
 
 ## Customising the theme
 
-Colours, fonts, and shadows are defined as Tailwind theme tokens at the top of `src/index.css` (`--color-racing-500`, `--color-amber-glow-500`, `--color-asphalt-*`, `--font-display`, etc.). Change them there and every component updates. The car motifs (`racing-stripe`, `checkered`, `carbon`, `grid-fade`) are custom utilities in the same file.
+Colours, fonts, and shadows are defined as Tailwind theme tokens at the top of `src/index.css` (`--color-accent-500`, `--color-highlight-500`, `--color-asphalt-*`, `--font-display`, etc.). Change them there and every component updates.

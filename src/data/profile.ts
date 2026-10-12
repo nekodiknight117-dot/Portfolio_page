@@ -1,62 +1,63 @@
 import type { Profile } from '../types'
 
 /**
- * PLACEHOLDER CONTENT - replace every field below with your own details.
- * Drop your photo into `public/` and update `photo`; put your resume at
- * `public/resume.pdf` (or change `resumePdf`).
+ * Populated from Nekodi Knight's resume. Fields marked TODO still need
+ * personal input (LinkedIn URL, any wording you want to tweak).
  */
 export const profile: Profile = {
-  name: 'Alex Driver',
-  role: 'Full-Stack Software Developer',
-  tagline: 'Engineering software with the precision of a well-tuned machine.',
-  location: 'Toronto, Canada',
-  email: 'hello@example.com',
-  photo: '/profile-placeholder.svg',
+  name: 'Nekodi Knight',
+  role: 'Software Developer & Cybersecurity Analyst',
+  tagline: 'Building secure, data-driven software from the API layer to the dashboard.',
+  location: 'New York, NY',
+  email: 'nekodiknight117@gmail.com',
+  phone: '516-650-3300',
+  photo: '/nekodi-knight.jpg',
   intro:
-    'I build fast, reliable web applications from the database up to the pixel. ' +
-    'When I am not shipping features, you will find me under the hood of a project car ' +
-    'or data-logging lap times at the local track.',
+    'Information Systems graduate (Magna Cum Laude) and CompTIA Security+ certified. I build full-stack ' +
+    'applications with FastAPI and React, train PyTorch models on real-world traffic and market data, and ' +
+    'bring a security-first mindset shaped by RMF, NIST SP 800-53, and DISA STIG work.',
   bio: [
-    'I am a software developer who fell in love with code the same way I fell in love with cars: by taking things apart to understand how they work, then putting them back together better. That curiosity drives how I approach engineering problems today.',
-    'I focus on full-stack TypeScript development, with a strong interest in performance, developer tooling, and clean architecture. I enjoy working on products where the details matter and the feedback loop is tight.',
-    'Outside of work I wrench on a project car, follow motorsport closely, and tinker with telemetry and data-logging hardware. Cars taught me that the best systems are the ones where every component has a clear purpose.',
+    'I am a software developer and cybersecurity analyst based in New York. I recently earned my Bachelor of Science in Information Systems from Brooklyn College (CUNY), graduating Magna Cum Laude, and I hold the CompTIA Security+ certification with Network+ in progress.',
+    'My work sits where software engineering meets security. I have engineered real-time data pipelines and AI models for projects like Theme-Trader and Swell Scan, hardened Linux systems against DISA STIGs as a CodePath Cybersecurity Fellow, and supported 16,000+ users and 4,000+ workstations in an enterprise hospital environment.',
+    'I care about systems that are fast, reliable, and secure by design. Whether it is an API, a SIEM dashboard, or an intrusion-detection model, I want to understand every component, measure what matters, and keep improving it.',
   ],
   specialties: [
     {
-      title: 'Front-End Engineering',
+      title: 'Full-Stack Development',
       description:
-        'Responsive, accessible interfaces with React and TypeScript, tuned for performance.',
+        'Type-safe APIs and real-time UIs with FastAPI, SQLAlchemy, React, and Vite, from the ORM layer to the dashboard.',
       icon: 'code',
     },
     {
-      title: 'Back-End & APIs',
+      title: 'Cybersecurity & Compliance',
       description:
-        'REST and GraphQL services in Node.js, with a focus on reliability and observability.',
+        'Risk assessment, RMF and A&A workflows, NIST SP 800-53 controls, and DISA STIG hardening on Linux and Windows.',
       icon: 'server',
     },
     {
-      title: 'Data & Databases',
+      title: 'AI & Data Pipelines',
       description:
-        'Schema design, query optimisation, and migrations across SQL and NoSQL stores.',
-      icon: 'database',
+        'PyTorch models and Pandas pipelines that turn high-volume network traffic and market data into actionable signals.',
+      icon: 'cpu',
     },
     {
-      title: 'Cloud & DevOps',
+      title: 'Network & Infrastructure',
       description:
-        'CI/CD pipelines, containerisation, and infrastructure on AWS and Vercel.',
-      icon: 'cloud',
+        'Active Directory, TCP/IP and OSI fundamentals, Splunk, Snort, Wireshark, and Nmap for monitoring and incident response.',
+      icon: 'database',
     },
   ],
   stats: [
-    { label: 'Years coding', value: 5, suffix: '+' },
-    { label: 'Projects shipped', value: 24 },
-    { label: 'Commits this year', value: 1180 },
-    { label: 'Cups of coffee', value: 999, suffix: '+' },
+    { label: 'User identities managed', value: 16000, suffix: '+' },
+    { label: 'Workstations restored', value: 4000, suffix: '+' },
+    { label: 'Tier II tickets / week', value: 100, suffix: '+' },
+    { label: 'Students mentored', value: 40, suffix: '+' },
   ],
   socials: [
-    { label: 'GitHub', url: 'https://github.com/your-username', icon: 'github' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/your-handle', icon: 'linkedin' },
-    { label: 'Email', url: 'mailto:hello@example.com', icon: 'mail' },
+    { label: 'GitHub', url: 'https://github.com/nekodiknight117-dot', icon: 'github' },
+    // TODO: replace with your real LinkedIn profile URL
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nekodi-knight', icon: 'linkedin' },
+    { label: 'Email', url: 'mailto:nekodiknight117@gmail.com', icon: 'mail' },
   ],
   resumePdf: '/resume.pdf',
 }
