@@ -19,7 +19,7 @@ export function Footer() {
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
             {navItems.map((item) => (
               <li key={item.id}>
-                <Link to={item.to} className="text-sm text-asphalt-300 transition-colors hover:text-white">
+                <Link to={item.to} className="text-sm text-asphalt-300 transition-colors hover:text-asphalt-100">
                   {item.label}
                 </Link>
               </li>
@@ -37,7 +37,7 @@ export function Footer() {
                   target={s.url.startsWith('mailto:') ? undefined : '_blank'}
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-asphalt-600 text-asphalt-200 transition-colors hover:border-asphalt-400 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-asphalt-600 text-asphalt-200 transition-colors hover:border-asphalt-400 hover:text-asphalt-100"
                 >
                   <SocialIcon icon={s.icon} size={18} />
                 </a>

@@ -57,14 +57,14 @@ export function ResumeSection() {
           <ul className="flex flex-col gap-1 text-sm text-asphalt-300">
             <li className="flex items-center gap-2">
               <Mail size={14} className="text-highlight-500" />
-              <a href={`mailto:${profile.email}`} className="hover:text-white">
+              <a href={`mailto:${profile.email}`} className="hover:text-asphalt-100">
                 {profile.email}
               </a>
             </li>
             {profile.phone && (
               <li className="flex items-center gap-2">
                 <Phone size={14} className="text-highlight-500" />
-                <a href={`tel:${profile.phone.replace(/[^\d+]/g, '')}`} className="hover:text-white">
+                <a href={`tel:${profile.phone.replace(/[^\d+]/g, '')}`} className="hover:text-asphalt-100">
                   {profile.phone}
                 </a>
               </li>
@@ -77,7 +77,7 @@ export function ResumeSection() {
               .map((s) => (
                 <li key={s.label} className="flex items-center gap-2">
                   <SocialIcon icon={s.icon} size={14} className="text-highlight-500" />
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="hover:text-asphalt-100">
                     {s.url.replace(/^https?:\/\/(www\.)?/, '')}
                   </a>
                 </li>

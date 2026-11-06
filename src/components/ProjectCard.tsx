@@ -31,7 +31,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <span className="absolute left-3 top-3 rounded-md bg-asphalt-950/80 px-2 py-0.5 text-xs font-medium text-asphalt-200 backdrop-blur">
+          <span className="absolute left-3 top-3 rounded-md bg-white/85 px-2 py-0.5 text-xs font-medium text-asphalt-100 backdrop-blur">
             {project.year}
           </span>
           {project.featured && (
@@ -76,7 +76,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${project.title} on GitHub`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-asphalt-100 transition-colors"
                 >
                   <GithubIcon size={18} />
                 </a>
@@ -87,7 +87,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${project.title} live demo`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-asphalt-100 transition-colors"
                 >
                   <ExternalLink size={18} />
                 </a>

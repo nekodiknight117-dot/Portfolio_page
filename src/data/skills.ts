@@ -1,53 +1,50 @@
 import type { Skill, SkillCategory } from '../types'
 
-/**
- * Skills from Nekodi Knight's resume. `level` (0-100) is a self-assessed
- * proficiency shown on the gauges; adjust the numbers to taste.
- */
+/** Skills from Nekodi Knight's resume, grouped by category. */
 export const skills: Skill[] = [
   // Languages
-  { name: 'Python', level: 90, category: 'Languages' },
-  { name: 'Java', level: 85, category: 'Languages' },
-  { name: 'SQL', level: 80, category: 'Languages' },
-  { name: 'JavaScript', level: 78, category: 'Languages' },
-  { name: 'Bash', level: 72, category: 'Languages' },
+  { name: 'Python', category: 'Languages' },
+  { name: 'Java', category: 'Languages' },
+  { name: 'SQL', category: 'Languages' },
+  { name: 'JavaScript', category: 'Languages' },
+  { name: 'Bash', category: 'Languages' },
 
   // Frameworks
-  { name: 'FastAPI', level: 88, category: 'Frameworks' },
-  { name: 'React', level: 80, category: 'Frameworks' },
-  { name: 'PyTorch', level: 75, category: 'Frameworks' },
-  { name: 'SQLAlchemy', level: 80, category: 'Frameworks' },
-  { name: 'Pandas', level: 82, category: 'Frameworks' },
-  { name: 'Tailwind CSS', level: 74, category: 'Frameworks' },
+  { name: 'FastAPI', category: 'Frameworks' },
+  { name: 'React', category: 'Frameworks' },
+  { name: 'PyTorch', category: 'Frameworks' },
+  { name: 'SQLAlchemy', category: 'Frameworks' },
+  { name: 'Pandas', category: 'Frameworks' },
+  { name: 'Tailwind CSS', category: 'Frameworks' },
 
   // Databases
-  { name: 'Relational SQL', level: 80, category: 'Databases' },
-  { name: 'SQLAlchemy ORM', level: 80, category: 'Databases' },
-  { name: 'Data Modeling', level: 76, category: 'Databases' },
+  { name: 'Relational SQL', category: 'Databases' },
+  { name: 'SQLAlchemy ORM', category: 'Databases' },
+  { name: 'Data Modeling', category: 'Databases' },
 
   // Security & Compliance
-  { name: 'RMF / A&A', level: 82, category: 'Security & Compliance' },
-  { name: 'NIST SP 800-53', level: 80, category: 'Security & Compliance' },
-  { name: 'DISA STIGs', level: 78, category: 'Security & Compliance' },
-  { name: 'Risk Assessment', level: 80, category: 'Security & Compliance' },
-  { name: 'Incident Response', level: 75, category: 'Security & Compliance' },
-  { name: 'TCP/IP & OSI', level: 85, category: 'Security & Compliance' },
+  { name: 'RMF / A&A', category: 'Security & Compliance' },
+  { name: 'NIST SP 800-53', category: 'Security & Compliance' },
+  { name: 'DISA STIGs', category: 'Security & Compliance' },
+  { name: 'Risk Assessment', category: 'Security & Compliance' },
+  { name: 'Incident Response', category: 'Security & Compliance' },
+  { name: 'TCP/IP & OSI', category: 'Security & Compliance' },
 
   // Tools
-  { name: 'Splunk', level: 78, category: 'Tools' },
-  { name: 'Snort', level: 75, category: 'Tools' },
-  { name: 'Wireshark', level: 80, category: 'Tools' },
-  { name: 'Nmap', level: 80, category: 'Tools' },
-  { name: 'Git & GitHub', level: 85, category: 'Tools' },
-  { name: 'Vite', level: 78, category: 'Tools' },
-  { name: 'VS Code / Cursor', level: 90, category: 'Tools' },
+  { name: 'Splunk', category: 'Tools' },
+  { name: 'Snort', category: 'Tools' },
+  { name: 'Wireshark', category: 'Tools' },
+  { name: 'Nmap', category: 'Tools' },
+  { name: 'Git & GitHub', category: 'Tools' },
+  { name: 'Vite', category: 'Tools' },
+  { name: 'VS Code / Cursor', category: 'Tools' },
 
   // Platforms
-  { name: 'Linux', level: 82, category: 'Platforms' },
-  { name: 'Windows 10+', level: 88, category: 'Platforms' },
-  { name: 'Active Directory', level: 85, category: 'Platforms' },
-  { name: 'Office 365', level: 85, category: 'Platforms' },
-  { name: 'Virtualization', level: 74, category: 'Platforms' },
+  { name: 'Linux', category: 'Platforms' },
+  { name: 'Windows 10+', category: 'Platforms' },
+  { name: 'Active Directory', category: 'Platforms' },
+  { name: 'Office 365', category: 'Platforms' },
+  { name: 'Virtualization', category: 'Platforms' },
 ]
 
 export const skillCategories: SkillCategory[] = [

@@ -24,7 +24,10 @@ export function AboutSection() {
             aria-hidden
             className="absolute -inset-3 rounded-[1.5rem] bg-gradient-to-br from-accent-500/20 via-transparent to-highlight-500/10 blur-xl"
           />
-          <div className="relative overflow-hidden rounded-2xl border border-asphalt-700 bg-asphalt-800 shadow-card">
+          <div
+            data-air-obstacle
+            className="relative overflow-hidden rounded-2xl border border-asphalt-700 bg-asphalt-800 shadow-card"
+          >
             <img src={publicUrl(profile.photo)} alt={`Portrait of ${profile.name}`} className="aspect-[4/5] w-full object-cover object-top" />
           </div>
         </motion.div>

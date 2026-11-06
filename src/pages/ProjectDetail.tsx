@@ -63,7 +63,7 @@ export function ProjectDetail() {
       <article className="container-page py-12 lg:py-16">
         <Link
           to="/#projects"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-asphalt-300 hover:text-white"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-asphalt-300 hover:text-asphalt-100"
         >
           <ArrowLeft size={16} /> Back to projects
         </Link>
@@ -168,7 +168,7 @@ export function ProjectDetail() {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-asphalt-200 hover:text-white"
+                      className="inline-flex items-center gap-2 text-asphalt-200 hover:text-asphalt-100"
                     >
                       <GithubIcon size={16} /> GitHub repository
                     </a>
@@ -178,7 +178,7 @@ export function ProjectDetail() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-asphalt-200 hover:text-white"
+                      className="inline-flex items-center gap-2 text-asphalt-200 hover:text-asphalt-100"
                     >
                       <ExternalLink size={16} /> Live demo
                     </a>

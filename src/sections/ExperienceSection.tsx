@@ -46,7 +46,7 @@ export function ExperienceSection() {
               'rounded-lg border px-4 py-2 text-sm font-medium transition-colors',
               filter === t
                 ? 'border-accent-500 bg-accent-500/15 text-accent-400'
-                : 'border-asphalt-600 text-asphalt-300 hover:border-asphalt-400 hover:text-white',
+                : 'border-asphalt-600 text-asphalt-300 hover:border-asphalt-400 hover:text-asphalt-100',
             )}
           >
             {t}

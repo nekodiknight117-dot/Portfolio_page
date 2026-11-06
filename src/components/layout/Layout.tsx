@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router'
+import { AirflowOverlay } from '../effects/AirflowOverlay'
+import { RoadBackground } from '../effects/RoadBackground'
 import { BackToTop } from './BackToTop'
 import { Footer } from './Footer'
 import { Navbar } from './Navbar'
@@ -25,19 +27,23 @@ export function Layout() {
   }, [pathname, hash, key])
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="relative z-0 flex min-h-screen flex-col">
+      <RoadBackground />
+      <AirflowOverlay />
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-accent-500 focus:px-3 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-[var(--road-content-gutter)] focus:top-4 focus:z-[100] focus:rounded focus:bg-accent-500 focus:px-3 focus:py-2 focus:text-white"
       >
         Skip to content
       </a>
-      <Navbar />
-      <main id="main" className="flex-1">
-        <Outlet />
-      </main>
-      <Footer />
-      <BackToTop />
+      <div className="relative z-10 flex min-h-screen w-full flex-1 flex-col px-[var(--road-content-gutter)]">
+        <Navbar />
+        <main id="main" className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+        <BackToTop />
+      </div>
     </div>
   )
 }

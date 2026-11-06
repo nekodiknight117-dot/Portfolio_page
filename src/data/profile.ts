@@ -6,15 +6,15 @@ import type { Profile } from '../types'
  */
 export const profile: Profile = {
   name: 'Nekodi Knight',
-  role: 'Software Developer & Cybersecurity Analyst',
+  role: 'Software Developer ',
   tagline: 'Building secure, data-driven software from the API layer to the dashboard.',
   location: 'New York, NY',
   email: 'nekodiknight117@gmail.com',
   phone: '516-650-3300',
-  photo: '/nekodi-knight.jpg',
+  photo: '/profile.jpg',
   intro:
     'Information Systems graduate (Magna Cum Laude) and CompTIA Security+ certified. I build full-stack ' +
-    'applications with FastAPI and React, train PyTorch models on real-world traffic and market data, and ' +
+    'applications with FastAPI, Spring Boot, and React, train PyTorch models on real-world traffic and market data, and ' +
     'bring a security-first mindset shaped by RMF, NIST SP 800-53, and DISA STIG work.',
   bio: [
     'I am a software developer and cybersecurity analyst based in New York. I recently earned my Bachelor of Science in Information Systems from Brooklyn College (CUNY), graduating Magna Cum Laude, and I hold the CompTIA Security+ certification with Network+ in progress.',
@@ -46,12 +46,6 @@ export const profile: Profile = {
         'Active Directory, TCP/IP and OSI fundamentals, Splunk, Snort, Wireshark, and Nmap for monitoring and incident response.',
       icon: 'database',
     },
-  ],
-  stats: [
-    { label: 'User identities managed', value: 16000, suffix: '+' },
-    { label: 'Workstations restored', value: 4000, suffix: '+' },
-    { label: 'Tier II tickets / week', value: 100, suffix: '+' },
-    { label: 'Students mentored', value: 40, suffix: '+' },
   ],
   socials: [
     { label: 'GitHub', url: 'https://github.com/nekodiknight117-dot', icon: 'github' },

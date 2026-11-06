@@ -4,7 +4,6 @@ import { SocialIcon } from '../components/SocialIcon'
 import { AnchorButton, LinkButton } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { StatCounter } from '../components/ui/StatCounter'
 import { profile } from '../data/profile'
 import { publicUrl } from '../lib/publicUrl'
 import type { Specialty } from '../types'
@@ -18,23 +17,18 @@ const specialtyIcons: Record<Specialty['icon'], React.ComponentType<LucideProps>
   smartphone: Smartphone,
 }
 
-/** Opening section: hero, headline stats, and specialties. */
+/** Opening section: hero and specialties. */
 export function HeroSection() {
   return (
     <section id="home" className="scroll-mt-16">
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div aria-hidden className="grid-fade absolute inset-0" />
         <div className="container-page relative grid items-center gap-12 py-20 lg:grid-cols-[1.2fr_1fr] lg:py-28">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-asphalt-600 bg-asphalt-800/70 px-3 py-1 text-xs font-medium text-asphalt-200">
-              <span className="h-2 w-2 animate-pulse-slow rounded-full bg-accent-400" />
-              Available for new opportunities
-            </p>
             <h1 className="text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
               Hi, I&rsquo;m <span className="text-accent-400">{profile.name}</span>.
               <span className="mt-3 block text-2xl font-medium leading-snug text-asphalt-300 sm:text-3xl lg:text-4xl">
@@ -63,7 +57,7 @@ export function HeroSection() {
                       target={s.url.startsWith('mailto:') ? undefined : '_blank'}
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-asphalt-600 transition-colors hover:border-asphalt-400 hover:text-white"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-asphalt-600 transition-colors hover:border-asphalt-400 hover:text-asphalt-100"
                     >
                       <SocialIcon icon={s.icon} size={16} />
                     </a>
@@ -83,7 +77,10 @@ export function HeroSection() {
               aria-hidden
               className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent-500/20 via-transparent to-highlight-500/10 blur-2xl"
             />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-asphalt-700 bg-asphalt-800 shadow-card">
+            <div
+              data-air-obstacle
+              className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-asphalt-700 bg-asphalt-800 shadow-card"
+            >
               <img
                 src={publicUrl(profile.photo)}
                 alt={`Portrait of ${profile.name}`}
@@ -91,15 +88,6 @@ export function HeroSection() {
               />
             </div>
           </motion.div>
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="container-page">
-        <div className="surface grid grid-cols-2 gap-8 px-6 py-10 md:grid-cols-4">
-          {profile.stats.map((s) => (
-            <StatCounter key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
-          ))}
         </div>
       </div>
 

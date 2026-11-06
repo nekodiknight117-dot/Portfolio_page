@@ -17,12 +17,6 @@ export interface Specialty {
   icon: 'code' | 'server' | 'database' | 'cloud' | 'cpu' | 'smartphone'
 }
 
-export interface Stat {
-  label: string
-  value: number
-  suffix?: string
-}
-
 export interface Profile {
   name: string
   role: string
@@ -36,7 +30,6 @@ export interface Profile {
   /** Longer bio paragraphs shown on About. */
   bio: string[]
   specialties: Specialty[]
-  stats: Stat[]
   socials: SocialLink[]
   resumePdf: string
 }
@@ -75,8 +68,6 @@ export type SkillCategory =
 
 export interface Skill {
   name: string
-  /** Proficiency 0-100 displayed on the gauge. */
-  level: number
   category: SkillCategory
 }
 

@@ -19,9 +19,9 @@ export const education: Education[] = [
 ]
 
 export const careerGoals: string[] = [
-  'Land a role where software engineering and security overlap: building secure applications, detection tooling, or compliance automation.',
-  'Complete CompTIA Network+ and continue toward deeper security certifications while shipping production software.',
-  'Grow into an engineer who can design, build, and defend a system end to end, from the data pipeline to the SIEM dashboard.',
+  'Land a role where I am building software that creates a positive impact on the world. The impact of the work I do is the very reason I am in this field.',
+  'Continue to grow as a developer and engineer, and to learn from the best in the field.',
+  'Grow into a leader who can mentor and guide other within a team.',
 ]
 
 // TODO: personalise these with your own hobbies.
@@ -29,7 +29,7 @@ export const interests: Interest[] = [
   {
     title: 'Automotive',
     description:
-      'A long-standing interest in cars and motorsport, and in how well-engineered systems come together.',
+      'A long-standing interest in cars and motorsport, I enjoy working on my car in my free time.',
   },
   {
     title: 'Security Research',

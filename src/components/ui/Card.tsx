@@ -9,6 +9,7 @@ interface CardProps extends ComponentPropsWithoutRef<'div'> {
 export function Card({ className, interactive = false, children, ...rest }: CardProps) {
   return (
     <div
+      data-air-obstacle
       className={cn(
         'surface relative overflow-hidden',
         interactive &&

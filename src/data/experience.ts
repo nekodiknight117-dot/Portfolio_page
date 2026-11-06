@@ -7,6 +7,21 @@ import type { Experience, ExperienceType } from '../types'
  */
 export const experience: Experience[] = [
   {
+    id: 'diya-software-engineer',
+    type: 'Job',
+    title: 'Software Engineer',
+    organization: 'Diya',
+    location: 'New York, NY',
+    start: '2026-08',
+    end: null,
+    highlights: [
+      'Engineered scalable data pipelines within a core Spring Boot architecture to inject multi-source business data into AI agent context windows, directly improving contextual reasoning and model decision accuracy.',
+      'Standardized disparate real estate portfolio formats into unified ingestion pipelines, eliminating manual mapping friction and accelerating new firm onboarding by 30%.',
+      'Spearheaded end-to-end feature delivery, pitching technical roadmaps and product enhancements to cross-functional stakeholders and driving them through implementation into production.',
+    ],
+    technologies: ['Spring Boot', 'Data Pipelines', 'AI Agents'],
+  },
+  {
     id: 'brooklyn-college-ta',
     type: 'Job',
     title: 'Teaching Assistant, Intro to Modern Programming Techniques',

@@ -80,7 +80,7 @@ export function ContactForm() {
           from_name: values.name,
           from_email: values.email,
           subject: values.subject,
-          message: values.message,
+          message: `${values.message}\n\n— ${values.name} (${values.email})`,
           to_name: profile.name,
         },
         { publicKey: PUBLIC_KEY! },

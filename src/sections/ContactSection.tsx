@@ -54,7 +54,7 @@ export function ContactSection() {
               {profile.phone && (
                 <li className="flex items-center gap-3">
                   <Phone size={16} className="text-highlight-500" />
-                  <a href={`tel:${profile.phone.replace(/[^\d+]/g, '')}`} className="hover:text-white">
+                  <a href={`tel:${profile.phone.replace(/[^\d+]/g, '')}`} className="hover:text-asphalt-100">
                     {profile.phone}
                   </a>
                 </li>

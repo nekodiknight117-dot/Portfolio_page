@@ -1,7 +1,7 @@
 import { Award, Code2, Database, Layers, Server, ShieldCheck, Wrench, type LucideProps } from 'lucide-react'
 import { Card } from '../components/ui/Card'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { SkillBar } from '../components/ui/SkillBar'
+import { SkillPill } from '../components/ui/SkillPill'
 import { certifications, skillCategories, skillsByCategory } from '../data/skills'
 import type { SkillCategory } from '../types'
 import { Section } from './Section'
@@ -30,7 +30,7 @@ export function SkillsSection() {
       <SectionHeading
         eyebrow="Skills"
         title="Technical Skills"
-        description="A snapshot of the languages, tools, and platforms I work with. Percentages are a self-assessed proficiency level."
+        description="The languages, tools, and platforms I work with, grouped by category."
       />
 
       <Card className="mb-8 p-6 sm:p-8">
@@ -74,10 +74,11 @@ export function SkillsSection() {
                   <p className="text-sm text-asphalt-300">{categoryBlurbs[cat]}</p>
                 </div>
               </div>
-              <ul className="space-y-4">
+
+              <ul className="flex flex-wrap gap-2">
                 {items.map((s) => (
                   <li key={s.name}>
-                    <SkillBar value={s.level} label={s.name} />
+                    <SkillPill name={s.name} />
                   </li>
                 ))}
               </ul>

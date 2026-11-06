@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-label="FoodInspect placeholder screenshot">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+    <pattern id="streets" width="120" height="120" patternUnits="userSpaceOnUse">
+      <path d="M0 60H120M60 0V120" stroke="#2b323b" stroke-width="6"/>
+      <path d="M0 20H120M0 100H120M20 0V120M100 0V120" stroke="#232931" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="540" fill="#0b0d10"/>
+  <rect width="1200" height="540" fill="url(#grid)"/>
+  <rect x="40" y="40" width="1120" height="460" rx="14" fill="#15181d" stroke="#2b323b"/>
+  <rect x="40" y="40" width="1120" height="48" rx="14" fill="#1f242b"/>
+  <rect x="40" y="74" width="1120" height="14" fill="#1f242b"/>
+  <circle cx="70" cy="64" r="6" fill="#3b82f6"/>
+  <circle cx="92" cy="64" r="6" fill="#38bdf8"/>
+  <circle cx="114" cy="64" r="6" fill="#3a434e"/>
+  <rect x="440" y="54" width="320" height="20" rx="10" fill="#0b0d10"/>
+  <!-- map area -->
+  <rect x="440" y="88" width="720" height="406" fill="#181d23"/>
+  <rect x="440" y="88" width="720" height="406" fill="url(#streets)"/>
+  <!-- map pins -->
+  <g>
+    <circle cx="700" cy="230" r="14" fill="#3b82f6"/>
+    <circle cx="700" cy="230" r="5" fill="#ffffff"/>
+    <circle cx="860" cy="330" r="10" fill="#3a434e"/>
+    <circle cx="980" cy="200" r="10" fill="#3a434e"/>
+    <circle cx="620" cy="380" r="10" fill="#3a434e"/>
+    <circle cx="1040" cy="400" r="10" fill="#3a434e"/>
+  </g>
+  <!-- listing panel -->
+  <rect x="40" y="88" width="400" height="406" fill="#1a1f26"/>
+  <rect x="64" y="112" width="352" height="110" rx="8" fill="#2b323b"/>
+  <text x="64" y="262" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e8ecf1">Polanco Restaurant</text>
+  <!-- grade badge -->
+  <rect x="300" y="238" width="116" height="34" rx="8" fill="#0b0d10" stroke="#38bdf8"/>
+  <text x="314" y="261" font-family="Arial, sans-serif" font-size="11" fill="#6b7684" letter-spacing="2">NYC</text>
+  <rect x="350" y="243" width="24" height="24" rx="5" fill="#38bdf8"/>
+  <text x="362" y="261" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0b0d10">A</text>
+  <text x="384" y="261" font-family="Arial, sans-serif" font-size="11" fill="#e8ecf1">Grade</text>
+  <rect x="64" y="280" width="140" height="10" rx="3" fill="#3a434e"/>
+  <text x="64" y="316" font-family="Arial, sans-serif" font-size="13" fill="#9aa5b1">Mexican restaurant</text>
+  <g fill="#3a434e">
+    <rect x="64" y="340" width="352" height="8" rx="3"/>
+    <rect x="64" y="358" width="300" height="8" rx="3"/>
+    <rect x="64" y="376" width="330" height="8" rx="3"/>
+  </g>
+  <g>
+    <rect x="64" y="412" width="100" height="36" rx="18" fill="#3b82f6"/>
+    <rect x="176" y="412" width="100" height="36" rx="18" fill="#2b323b"/>
+    <rect x="288" y="412" width="100" height="36" rx="18" fill="#2b323b"/>
+  </g>
+  <text x="1136" y="124" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#6b7684" letter-spacing="3">PLACEHOLDER SCREENSHOT</text>
+  <rect x="40" y="494" width="1120" height="4" fill="#38bdf8"/>
+</svg>

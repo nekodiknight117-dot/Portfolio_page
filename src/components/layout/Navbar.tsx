@@ -40,7 +40,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50">
       <div
         className={cn(
-          'border-b border-asphalt-700/60 bg-asphalt-900/85 backdrop-blur-md transition-shadow',
+          'border-b border-asphalt-700/80 bg-asphalt-800/90 backdrop-blur-md transition-shadow',
           scrolled && 'shadow-card',
         )}
       >
@@ -62,7 +62,7 @@ export function Navbar() {
                     aria-current={isActive ? 'location' : undefined}
                     className={cn(
                       'relative block px-3 py-2 text-sm font-medium transition-colors',
-                      isActive ? 'text-white' : 'text-asphalt-300 hover:text-white',
+                      isActive ? 'text-asphalt-100' : 'text-asphalt-300 hover:text-asphalt-100',
                       'after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-accent-500 after:transition-transform after:duration-300 after:content-[""]',
                       isActive ? 'after:scale-x-100' : 'after:scale-x-0 hover:after:scale-x-100',
                     )}
@@ -76,7 +76,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-asphalt-100 hover:bg-asphalt-800 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-asphalt-100 hover:bg-asphalt-700 lg:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="mobile-menu"

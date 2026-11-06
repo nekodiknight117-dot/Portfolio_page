@@ -30,7 +30,7 @@ export function BackToTop() {
           type="button"
           aria-label="Back to top"
           onClick={() => window.scrollTo({ top: 0 })}
-          className="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-asphalt-600 bg-asphalt-800/90 text-asphalt-100 shadow-card backdrop-blur transition-colors hover:border-accent-500 hover:text-accent-400"
+          className="fixed bottom-6 right-[var(--road-content-gutter)] z-40 flex h-11 w-11 items-center justify-center rounded-full border border-asphalt-600 bg-asphalt-800/90 text-asphalt-100 shadow-card backdrop-blur transition-colors hover:border-accent-500 hover:text-accent-400"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 12 }}
