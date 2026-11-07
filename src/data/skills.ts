@@ -8,7 +8,11 @@ export const skills: Skill[] = [
   { name: 'SQL', category: 'Languages' },
   { name: 'JavaScript', category: 'Languages' },
   { name: 'Bash', category: 'Languages' },
-
+  { name: 'HTML', category: 'Languages' },
+  { name: 'CSS', category: 'Languages' },
+  { name: 'C++', category: 'Languages' },
+  { name : 'Golang', category: 'Languages' },
+  { name : 'Typescript', category: 'Languages' },
   // Frameworks
   { name: 'FastAPI', category: 'Frameworks' },
   { name: 'React', category: 'Frameworks' },
@@ -16,6 +20,8 @@ export const skills: Skill[] = [
   { name: 'SQLAlchemy', category: 'Frameworks' },
   { name: 'Pandas', category: 'Frameworks' },
   { name: 'Tailwind CSS', category: 'Frameworks' },
+  { name: 'Spring Boot', category: 'Frameworks' },
+  { name: 'Vite', category: 'Frameworks' },
 
   // Databases
   { name: 'Relational SQL', category: 'Databases' },
@@ -63,5 +69,5 @@ export function skillsByCategory(category: SkillCategory): Skill[] {
 /** Certifications shown on the Skills and Resume pages. */
 export const certifications: { name: string; status?: string }[] = [
   { name: 'CompTIA Security+ (SY0-701)' },
-  { name: 'CompTIA Network+ (N10-009)', status: 'In progress' },
+  { name: 'Certified Cisco Network Associate (CCNA)', status: 'In progress' },
 ]

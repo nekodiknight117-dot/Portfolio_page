@@ -8,10 +8,10 @@ interface SectionProps {
   children: ReactNode
 }
 
-/** One block of the single-page scroller: anchored, offset for the sticky navbar, with a top divider. */
+/** One block of the single-page scroller: anchored, offset for the sticky navbar. */
 export function Section({ id, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn('scroll-mt-16 border-t border-asphalt-800', className)}>
+    <section id={id} className={cn('scroll-mt-16', className)}>
       <div className="container-page py-20 lg:py-28">{children}</div>
     </section>
   )

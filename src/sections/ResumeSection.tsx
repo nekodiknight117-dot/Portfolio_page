@@ -48,7 +48,6 @@ export function ResumeSection() {
       </div>
 
       <Card className="mt-12 p-6 sm:p-10">
-        {/* Header */}
         <header className="flex flex-col gap-4 border-b border-asphalt-700 pb-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-3xl sm:text-4xl">{profile.name}</h3>

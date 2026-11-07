@@ -1,59 +1,52 @@
 import { motion } from 'framer-motion'
-import { Award, GraduationCap, Sparkles } from 'lucide-react'
+import {
+  Award,
+  BrainCircuit,
+  GraduationCap,
+  Shield,
+  Sparkles,
+  Wrench,
+  type LucideProps,
+} from 'lucide-react'
 import { Card } from '../components/ui/Card'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { careerGoals, education, interests } from '../data/education'
 import { profile } from '../data/profile'
 import { certifications } from '../data/skills'
-import { publicUrl } from '../lib/publicUrl'
 import { Section } from './Section'
+
+const interestIcons: Record<string, React.ComponentType<LucideProps>> = {
+  Automotive: Wrench,
+  'Security Research': Shield,
+  'Applied AI': BrainCircuit,
+  'Teaching & Mentoring': Sparkles,
+}
 
 export function AboutSection() {
   return (
     <Section id="about">
       {/* Intro */}
-      <div className="grid gap-12 lg:grid-cols-[320px_1fr] lg:items-start">
-        <motion.div
-          className="relative mx-auto w-full max-w-xs lg:mx-0"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5 }}
-        >
-          <div
-            aria-hidden
-            className="absolute -inset-3 rounded-[1.5rem] bg-gradient-to-br from-accent-500/20 via-transparent to-highlight-500/10 blur-xl"
-          />
-          <div
-            data-air-obstacle
-            className="relative overflow-hidden rounded-2xl border border-asphalt-700 bg-asphalt-800 shadow-card"
-          >
-            <img src={publicUrl(profile.photo)} alt={`Portrait of ${profile.name}`} className="aspect-[4/5] w-full object-cover object-top" />
-          </div>
-        </motion.div>
-
-        <div>
-          <SectionHeading eyebrow="About" title="About Me" className="mb-6" />
-          <div className="space-y-4 text-lg text-asphalt-300">
-            {profile.bio.map((p) => (
-              <p key={p.slice(0, 40)}>{p}</p>
-            ))}
-          </div>
-          <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
-            <div className="surface p-4">
-              <dt className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Role</dt>
-              <dd className="mt-1 font-display font-semibold text-asphalt-100">{profile.role}</dd>
-            </div>
-            <div className="surface p-4">
-              <dt className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Based in</dt>
-              <dd className="mt-1 font-display font-semibold text-asphalt-100">{profile.location}</dd>
-            </div>
-            <div className="surface p-4">
-              <dt className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Focus</dt>
-              <dd className="mt-1 font-display font-semibold text-asphalt-100">Software & Security</dd>
-            </div>
-          </dl>
+      <div>
+        <SectionHeading eyebrow="About" title="About Me" className="mb-6" />
+        <div className="space-y-4 text-lg text-asphalt-300">
+          {profile.bio.map((p) => (
+            <p key={p.slice(0, 40)}>{p}</p>
+          ))}
         </div>
+        <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <div className="surface p-4">
+            <dt className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Role</dt>
+            <dd className="mt-1 font-display font-semibold text-asphalt-100">{profile.role}</dd>
+          </div>
+          <div className="surface p-4">
+            <dt className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Based in</dt>
+            <dd className="mt-1 font-display font-semibold text-asphalt-100">{profile.location}</dd>
+          </div>
+          <div className="surface p-4">
+            <dt className="text-xs font-medium uppercase tracking-wider text-asphalt-400">Focus</dt>
+            <dd className="mt-1 font-display font-semibold text-asphalt-100">Software & Security</dd>
+          </div>
+        </dl>
       </div>
 
       {/* Education */}
@@ -129,23 +122,26 @@ export function AboutSection() {
         <div>
           <SectionHeading eyebrow="Interests" title="Outside of Work" />
           <div className="grid gap-4 sm:grid-cols-2">
-            {interests.map((it, i) => (
-              <motion.div
-                key={it.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-              >
-                <Card interactive className="h-full p-5">
-                  <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-400">
-                    <Sparkles size={18} />
-                  </span>
-                  <h3 className="text-lg">{it.title}</h3>
-                  <p className="mt-1.5 text-sm text-asphalt-300">{it.description}</p>
-                </Card>
-              </motion.div>
-            ))}
+            {interests.map((it, i) => {
+              const Icon = interestIcons[it.title] ?? Sparkles
+              return (
+                <motion.div
+                  key={it.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                >
+                  <Card interactive className="h-full p-5">
+                    <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent-500/15 text-accent-400">
+                      <Icon size={18} />
+                    </span>
+                    <h3 className="text-lg">{it.title}</h3>
+                    <p className="mt-1.5 text-sm text-asphalt-300">{it.description}</p>
+                  </Card>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </div>

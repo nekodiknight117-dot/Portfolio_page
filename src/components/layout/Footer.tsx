@@ -47,7 +47,7 @@ export function Footer() {
           <p className="mt-4 text-sm text-asphalt-400">{profile.location}</p>
         </div>
       </div>
-      <div className="border-t border-asphalt-800">
+      <div className="border-t border-asphalt-700">
         <div className="container-page flex flex-col items-center justify-between gap-2 py-4 text-xs text-asphalt-400 sm:flex-row">
           <p>
             &copy; {year} {profile.name}. All rights reserved.

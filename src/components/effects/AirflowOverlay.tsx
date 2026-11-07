@@ -106,8 +106,10 @@ function strokeParticle(
 function startAirflow(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
   const wisps: Wisp[] = []
   const layer = document.createElement('canvas')
-  const layerCtx = layer.getContext('2d')
-  if (!layerCtx) return () => {}
+  const offscreen = layer.getContext('2d')
+  if (!offscreen) return () => {}
+  // Rebind so nested closures keep a definite (non-null) context reference.
+  const layerCtx: CanvasRenderingContext2D = offscreen
   let raf = 0
   let last = performance.now()
   let running = true

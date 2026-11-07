@@ -15,9 +15,9 @@ export const profile: Profile = {
   intro:
     'Information Systems graduate (Magna Cum Laude) and CompTIA Security+ certified. I build full-stack ' +
     'applications with FastAPI, Spring Boot, and React, train PyTorch models on real-world traffic and market data, and ' +
-    'bring a security-first mindset shaped by RMF, NIST SP 800-53, and DISA STIG work.',
+    'bring a security-first mindset to teams.',
   bio: [
-    'I am a software developer and cybersecurity analyst based in New York. I recently earned my Bachelor of Science in Information Systems from Brooklyn College (CUNY), graduating Magna Cum Laude, and I hold the CompTIA Security+ certification with Network+ in progress.',
+    'I am a new grad based in New York. I recently earned my Bachelor of Science in Information Systems from Brooklyn College (CUNY), graduating Magna Cum Laude, and I hold the CompTIA Security+ certification with Network+ in progress.',
     'My work sits where software engineering meets security. I have engineered real-time data pipelines and AI models for projects like Theme-Trader and Swell Scan, hardened Linux systems against DISA STIGs as a CodePath Cybersecurity Fellow, and supported 16,000+ users and 4,000+ workstations in an enterprise hospital environment.',
     'I care about systems that are fast, reliable, and secure by design. Whether it is an API, a SIEM dashboard, or an intrusion-detection model, I want to understand every component, measure what matters, and keep improving it.',
   ],
