@@ -25,12 +25,14 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     >
       <Card interactive className="flex h-full flex-col">
         <Link to={detailHref} className="group relative block aspect-[16/9] overflow-hidden bg-asphalt-950">
-          <img
-            src={publicUrl(project.image)}
-            alt={`${project.title} screenshot`}
-            loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+          {project.image ? (
+            <img
+              src={publicUrl(project.image)}
+              alt={`${project.title} screenshot`}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : null}
           <span className="absolute left-3 top-3 rounded-md bg-white/85 px-2 py-0.5 text-xs font-medium text-asphalt-100 backdrop-blur">
             {project.year}
           </span>

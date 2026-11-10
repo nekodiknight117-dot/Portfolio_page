@@ -11,7 +11,7 @@ export const projects: Project[] = [
     title: 'Theme-Trader',
     summary:
       'AI-powered investment platform that analyzes market volatility in real time and builds data-driven, theme-based portfolios around a user\u2019s interests.',
-    image: '/projects/theme-trader.svg',
+    image: '/projects/theme-trader.png',
     technologies: ['FastAPI', 'React', 'WebSockets', 'Alpaca API', 'SQLAlchemy', 'Python', 'Vite', 'uv'],
     featured: true,
     year: 2026,
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     title: 'Swell Scan',
     summary:
       'AI-driven network intrusion detection system that streams traffic logs to a PyTorch model to flag DDoS attacks with sub-second latency, built for post-attack triage.',
-    image: '/projects/swell-scan.svg',
+    image: '/projects/swell-scan.png',
     technologies: ['FastAPI', 'PyTorch', 'Pandas', 'JavaScript', 'React', 'Tailwind CSS', 'Python'],
     featured: true,
     year: 2026,
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     title: 'Dev-Sync',
     summary:
       'Undergraduate developer collaboration platform where student developers post projects with open roles, apply to join teams, and coordinate through real-time chat, comments, and notifications.',
-    image: '/projects/dev-sync.svg',
+    image: '/projects/dev-sync.webp',
     technologies: [
       'FastAPI',
       'React',
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     title: 'FoodInspect',
     summary:
       'Hackathon-built Chrome extension that overlays NYC restaurant health-inspection grades directly on Google Maps listings, backed by NYC Open Data.',
-    image: '/projects/food-inspect.svg',
+    image: '/projects/food-inspect.jpg',
     technologies: ['JavaScript', 'Chrome Extensions', 'Python', 'Pandas', 'NYC Open Data', 'HTML', 'CSS'],
     featured: false,
     year: 2026,
@@ -188,7 +188,7 @@ export const projects: Project[] = [
     title: 'Portfolio Site',
     summary:
       'This website: a single-page React and TypeScript portfolio that captures my projects, skills, and experience, driven entirely by typed content files.',
-    image: '/projects/portfolio-site.svg',
+    image: '',
     technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router', 'Framer Motion', 'EmailJS'],
     featured: false,
     year: 2026,

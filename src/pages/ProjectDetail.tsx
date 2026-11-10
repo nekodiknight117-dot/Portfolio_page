@@ -96,9 +96,13 @@ export function ProjectDetail() {
               )}
             </div>
           </div>
-          <Card className="aspect-[16/10] bg-asphalt-950">
-            <img src={publicUrl(project.image)} alt={`${project.title} screenshot`} className="h-full w-full object-cover" />
-          </Card>
+          {project.image ? (
+            <Card className="aspect-[16/10] bg-asphalt-950">
+              <img src={publicUrl(project.image)} alt={`${project.title} screenshot`} className="h-full w-full object-cover" />
+            </Card>
+          ) : (
+            <Card className="aspect-[16/10] bg-asphalt-950" aria-hidden />
+          )}
         </header>
 
         {/* Body */}

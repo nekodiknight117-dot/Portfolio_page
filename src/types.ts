@@ -43,7 +43,8 @@ export interface Project {
   slug: string
   title: string
   summary: string
-  image: string
+  /** Project screenshot; omit or leave empty for a blank media panel. */
+  image?: string
   technologies: string[]
   featured: boolean
   year: number
